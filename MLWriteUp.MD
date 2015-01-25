@@ -1,7 +1,21 @@
 #  Practical Machine Learning Write-up
-### Note that I have not provided a compiled HTML file as I do not know how to do this and do not want to take the time to figure it out right now.  I am providing this write-up and a .R file with steps used in analyzing the data and the final model.
+### Note that I have not provided a compiled HTML file as I do not know how to do this and don't have the time to figure it out right now.  I am providing this write-up and a .R file with steps used in analyzing the data and the final model.
 
 ## Goal: Predict manner exercise is performed based on data taken during exercise. The variable classe describes the exercise method. It is a factor variable with 5 levels denoted A:E.
+
+## Summary of steps
+1. Data cleaning:
+   a. looked for and removed missing values 
+2. Exporing data
+   a. plotted data again classe to look for correlations, patterns
+   b. ran correlation function
+3. Looked for significant variables
+   a. Selected subsets of 200 observations and 10 variables and fit using random forest.
+   b. Performed cross-validation on all runs. 
+   c.  Narrows variables down to 5 or 6 but realized this is misuse of random forests as it selects observations and variables
+   d.  Repeated a and b using 50% of training data and random tree. (Would use more than 50% next time.)
+   e. Cross validated and made variable selection.
+4. As random tree results weren't great, used gbm with selected variables.  Cross-validated. Results reasonable. Stopped. 
 
 ## Data:
 The Training data contains 19,622 observations of 160 variables.
